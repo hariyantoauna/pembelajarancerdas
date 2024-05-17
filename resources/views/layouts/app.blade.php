@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Pembelajaran Cerdas</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
@@ -128,13 +128,13 @@
                         @guest
                         @else
                             <li class="nav-item">
-                                <a class="nav-link" href="">Chat AI</a>
+                                <a class="nav-link" href="/chatbot">Chat AI</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="">Video Rekomendasi</a>
+                                <a class="nav-link" href="/video">Video Rekomendasi</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="">Buku Rekomendasi</a>
+                                <a class="nav-link" href="/buku">Buku Rekomendasi</a>
                             </li>
                         @endguest
 
