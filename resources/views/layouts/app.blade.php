@@ -30,9 +30,17 @@
             font-style: normal;
 
         }
-    </style>
 
-    <style>
+        .slide-on {
+            background-image: url('dist/image/bg/um.jpg');
+            height: 100vh;
+            width: 100%;
+            object-fit: cover;
+            background-position: center button;
+            background-size: cover;
+
+        }
+
         .chat-container {
             max-width: 100%;
             margin: 10px auto;
@@ -117,15 +125,19 @@
                         <li class="nav-item">
                             <a class="nav-link" href="">Beranda</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="">Chat AI</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="">Video Rekomendasi</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="">Buku Rekomendasi</a>
-                        </li>
+                        @guest
+                        @else
+                            <li class="nav-item">
+                                <a class="nav-link" href="">Chat AI</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="">Video Rekomendasi</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="">Buku Rekomendasi</a>
+                            </li>
+                        @endguest
+
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
@@ -163,7 +175,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main>
             @yield('content')
         </main>
     </div>
