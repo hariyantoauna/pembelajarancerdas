@@ -131,10 +131,10 @@
                                 <a class="nav-link" href="/chatbot">Chat AI</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/video">Video Rekomendasi</a>
+                                <a class="nav-link" href="/video">Video</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/buku">Buku Rekomendasi</a>
+                                <a class="nav-link" href="/buku">Buku</a>
                             </li>
                         @endguest
 
