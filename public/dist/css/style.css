@@ -1,0 +1,20 @@
+.sl {
+
+    background-image: url('dist/image/bg/footer-bg.png');
+    height: 100%;
+}
+
+.rais {
+    text-align: right;
+    margin-top: 150px;
+}
+
+
+@media (max-width: 997px) {
+
+    .rais {
+        text-align: center;
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+}
