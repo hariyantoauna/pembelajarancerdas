@@ -25,7 +25,7 @@ class GoogleBooksService
             ]);
         } else {
             $response = Http::get($url, [
-                'q' => 'Pendidikan',
+                'q' => auth()->user()->prodi,
                 'maxResults' => $maxResults,
                 'key' => $this->apiKey
             ]);

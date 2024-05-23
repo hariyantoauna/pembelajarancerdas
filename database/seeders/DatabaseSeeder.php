@@ -20,18 +20,21 @@ class DatabaseSeeder extends Seeder
             'name' => 'HARIYANTO S. AUNA',
             'email' => 'hariyantosauna@gmail.com',
             'password' => Hash::make('12345'),
+            'prodi' => "Teknologi Pendidikan",
         ]);
 
         User::factory()->create([
             'name' => 'SAIDA ULFA',
             'email' => 'saidaulfa@demo.com',
             'password' => Hash::make('12345'),
+            'prodi' => "Teknik Elektro",
         ]);
 
         User::factory()->create([
             'name' => 'YERRY SOEPRAPTO',
             'email' => 'yerrysoeprapto@demo.com',
             'password' => Hash::make('12345'),
+            'prodi' => "Sistem Informasi",
         ]);
     }
 }

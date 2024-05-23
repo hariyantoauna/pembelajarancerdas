@@ -39,7 +39,7 @@ class YouTubeService
             $response = $this->client->get('search', [
                 'query' => [
                     'key' => $this->apiKey,
-                    'q' => "pendidikan",
+                    'q' => auth()->user()->prodi,
                     'part' => 'snippet',
                     'maxResults' => $maxResults,
                     'type' => 'video'
