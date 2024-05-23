@@ -41,9 +41,14 @@
                                     style="width: 100px;">
                             @endif
 
+
+
                             <div class="card-body">
                                 <h5 class="card-title">{{ $title }}</h5>
                                 <p class="card-text">{{ $authors }}</p>
+
+                                
+
                                 <a class="btn btn-sm btn-success" href="">Selengkapnya</a>
                             </div>
                             <div class="card-footer">
