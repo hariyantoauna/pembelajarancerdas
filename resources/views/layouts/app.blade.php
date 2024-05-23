@@ -123,7 +123,7 @@
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
                         <li class="nav-item">
-                            <a class="nav-link" href="">Beranda</a>
+                            <a class="nav-link" href="/beranda">Beranda</a>
                         </li>
                         @guest
                         @else
@@ -131,10 +131,10 @@
                                 <a class="nav-link" href="/chatbot">Chat AI</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/video">Video</a>
+                                <a class="nav-link" href="/books/search">Perpustakaan</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/buku">Buku</a>
+                                <a class="nav-link" href="/youtube/search">Video</a>
                             </li>
                         @endguest
 

@@ -30,5 +30,12 @@ return [
             'channel' => env('SLACK_BOT_USER_DEFAULT_CHANNEL'),
         ],
     ],
+    // other services
+    'google_books' => [
+        'api_key' => env('GOOGLE_BOOKS_API_KEY'),
+    ],
+    'google_youtube' => [
+        'api_key' => env('GOOGLE_YOUTUBE_API_KEY'),
+    ],
 
 ];
