@@ -15,7 +15,7 @@
             <ul>
                 @foreach ($results['organic_results'] as $result)
                     <li>
-                        <a href="{{ $result['link'] }}">{{ $result['title'] }}</a>
+                        <a target="_blank" href="{{ $result['link'] }}">{{ $result['title'] }}</a>
                         <p>{{ $result['snippet'] }}</p>
                     </li>
                 @endforeach
