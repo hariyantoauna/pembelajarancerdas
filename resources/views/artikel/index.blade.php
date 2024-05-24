@@ -1,21 +1,27 @@
+<!-- resources/views/scholar/results.blade.php -->
 @extends('layouts.app')
 
 @section('content')
-    <form method="GET" action="{{ route('google_scholar.search') }}">
-        <input type="text" name="query" placeholder="Search for articles">
-        <button type="submit">Search</button>
-    </form>
+    <div class="container my-5">
+        <form action="{{ route('scholar.search') }}" method="GET">
+            <div class="input-group mb-3">
+                <input class="form-control" type="text" name="query" placeholder="Search for videos">
+                <button class="btn btn-outline-secondary" type="submit">Search</button>
+            </div>
+        </form>
 
-    @if (isset($articles['organic_results']))
-        <h2>Search Results:</h2>
-        <ul>
-            @foreach ($articles['organic_results'] as $article)
-                <li>
-                    <h3>{{ $article['title'] }}</h3>
-                    <p>{{ $article['snippet'] }}</p>
-                    <a href="{{ $article['link'] }}" target="_blank">Read more</a>
-                </li>
-            @endforeach
-        </ul>
-    @endif
+        <h5>Hasil Pencarian Google Scholar</h5>
+        @if (isset($results['organic_results']))
+            <ul>
+                @foreach ($results['organic_results'] as $result)
+                    <li>
+                        <a href="{{ $result['link'] }}">{{ $result['title'] }}</a>
+                        <p>{{ $result['snippet'] }}</p>
+                    </li>
+                @endforeach
+            </ul>
+        @else
+            <p>Tidak ada hasil yang ditemukan.</p>
+        @endif
+    </div>
 @endsection

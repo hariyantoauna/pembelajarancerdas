@@ -29,5 +29,7 @@ Route::resource('/perpustakaan', PerpustakaanController::class);
 Route::get('/books/search', [BooksController::class, 'search'])->name('books.search');
 Route::get('/youtube/search', [YouTubeController::class, 'search'])->name('youtube.search');
 
+Route::get('/scholar/search', [ScholarController::class, 'search'])->name('scholar.search');
+
 Route::get('/chat', [ChatbotController::class, 'index'])->name('chat');
 Route::post('/chatbot', [ChatbotController::class, 'handle']);
