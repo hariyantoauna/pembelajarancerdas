@@ -133,7 +133,7 @@
                                     AI</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {{ Request::is('books.search') ? 'active' : ' ' }}"
+                                <a class="nav-link {{ Request::is('scholar.search') ? 'active' : ' ' }}"
                                     href="/scholar/search">Artikel</a>
                             </li>
                             <li class="nav-item">
