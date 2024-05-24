@@ -129,7 +129,7 @@
                         @guest
                         @else
                             <li class="nav-item">
-                                <a class="nav-link {{ Request::is('chatbot') ? 'active' : ' ' }}" href="/chatbot">Chat
+                                <a class="nav-link {{ Request::is('chat') ? 'active' : ' ' }}" href="/chat">Chat
                                     AI</a>
                             </li>
                             <li class="nav-item">
@@ -226,7 +226,7 @@
     <script>
         $(document).ready(function() {
             $('#send').click(function() {
-               
+
                 var message = $('#message').val();
                 $('#message').val('');
 
