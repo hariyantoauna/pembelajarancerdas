@@ -123,18 +123,26 @@
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
                         <li class="nav-item">
-                            <a class="nav-link" href="/beranda">Beranda</a>
+                            <a class="nav-link {{ Request::is('beranda') ? 'active' : ' ' }}"
+                                href="/beranda">Beranda</a>
                         </li>
                         @guest
                         @else
                             <li class="nav-item">
-                                <a class="nav-link" href="/chatbot">Chat AI</a>
+                                <a class="nav-link {{ Request::is('chatbot') ? 'active' : ' ' }}" href="/chatbot">Chat
+                                    AI</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/books/search">Perpustakaan</a>
+                                <a class="nav-link {{ Request::is('books.search') ? 'active' : ' ' }}"
+                                    href="/scholar/search">Artikel</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/youtube/search">Video</a>
+                                <a class="nav-link {{ Request::is('books.search') ? 'active' : ' ' }}"
+                                    href="/books/search">Buku</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {{ Request::is('youtube.search') ? 'active' : ' ' }}"
+                                    href="/youtube/search">Video</a>
                             </li>
                         @endguest
 
@@ -146,9 +154,9 @@
                             @endif
 
                             @if (Route::has('register'))
-                                <li class="nav-item">
+                                {{-- <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">Daftar</a>
-                                </li>
+                                </li> --}}
                             @endif
                         @else
                             <li class="nav-item dropdown">
@@ -213,6 +221,29 @@
             chatBody.appendChild(messageDiv);
             chatBody.scrollTop = chatBody.scrollHeight;
         }
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            $('#send').click(function() {
+               
+                var message = $('#message').val();
+                $('#message').val('');
+
+                $.ajax({
+                    url: '/chatbot',
+                    type: 'POST',
+                    data: {
+                        message: message,
+                        _token: '{{ csrf_token() }}'
+                    },
+                    success: function(response) {
+                        $('#messages').append('<div>User: ' + message + '</div>');
+                        $('#messages').append('<div>Bot: ' + response.reply + '</div>');
+                    }
+                });
+            });
+        });
     </script>
 </body>
 
